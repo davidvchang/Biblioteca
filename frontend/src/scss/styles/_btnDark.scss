@@ -1,0 +1,22 @@
+@import '../variables';
+
+.btnDark{
+    background-color: #202020;
+    border: none;
+    padding: 12px 30px;
+    height: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
+
+    span {
+        color: #f1f1f1;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+.btnDark:hover {
+    filter: opacity(0.9);
+    transition: all;
+    transition-duration: 0.3s;
+}
