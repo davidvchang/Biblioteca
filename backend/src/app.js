@@ -4,6 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import bookRoutes from "./routes/books.routes.js";
+import userRoutes from "./routes/users.routes.js";
 
 const app = express()
 
@@ -17,7 +18,7 @@ app.use(morgan("dev"))
 app.use(express.json())
 
 //ROUTES
-// app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes)
 app.use('/api/books', bookRoutes)
 
 export default app
