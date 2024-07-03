@@ -1,10 +1,69 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import BtnDark from '../components/BtnDark'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import axios from "axios";
 
 function NavBar() {
 
+  const valueInictialSearchInput = ""
+  
+  const [genresArray, setGenresArray] = useState([])
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+
   const favorites = 0
+
+  const getGenres = async () => {
+    const response = await axios.get('http://localhost:4000/api/books');
+    const data = response.data;
+
+    // Verificar si hay datos y si es un array con al menos un elemento
+    if (data && Array.isArray(data) && data.length > 0) {
+      const genreSet = new Set(); // Utilizar un Set para almacenar géneros únicos
+
+      // Iterar sobre los libros y agregar cada género al Set
+      data.forEach(book => {
+        if (book.genre) {
+          genreSet.add(book.genre);
+        }
+      });
+
+      const genres = [...genreSet];
+      setGenresArray(genres)
+    } else {
+      console.log('No se encontraron libros');
+    }
+  }
+
+  useEffect(() => {
+    getGenres()
+  }, [])
+
+  const handleGenreChange = (e) => {
+    const selectedGenre = e.target.value;
+    if (selectedGenre) {
+      navigate(`/genre/${selectedGenre}`);
+    } else {
+      navigate('/');
+    }
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/?search=${searchTerm}`);
+    setSearchTerm('');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch(e);
+      if(searchTerm === "") {
+        navigate('/');
+      }
+    }
+  };
+  
 
   return (
     <section className='Nav'>
@@ -17,10 +76,21 @@ function NavBar() {
 
       <div className='searchAddBook'>
         <div className='searchInput'>
-          <input type="search" placeholder='Buscar por titulo'/>
-          <select id="Género">
+        <form onSubmit={handleSearch}>
+            <input
+              type="search"
+              placeholder='Buscar por titulo'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={handleKeyDown}
+            />
+        </form>
+
+          <select id="Género" onChange={handleGenreChange}>
             <option value="">Seleccionar Género</option>
-            <option value="Comedia">Comedia</option>
+            {genresArray.map((genres, index) => (
+              <option key={index} value={genres}>{genres}</option>
+            ))}
           </select>
         </div>
 

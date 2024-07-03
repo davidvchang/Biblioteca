@@ -1,10 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import BookCard from '../components/BookCard'
 import axios from "axios";
+import { useLocation } from 'react-router-dom';
 
 function Books() {
 
   const [books, setBooks] = useState([])
+  const location = useLocation();
+
+
+  const searchByGenre = async (genre) => {
+    try {
+        const response = await axios.get(`http://localhost:4000/api/books/genre/${genre}`);
+        console.log(response.data); // Verifica que los datos devueltos son los esperados
+    } catch (error) {
+        console.error('Error al buscar por género:', error);
+    }
+};
 
   useEffect(() => {
     const CallAPI = async () => {
@@ -12,8 +24,10 @@ function Books() {
         // const res = await fetch("http://localhost:4000/api/books")
         // const data = await res.json()
         // setBooks(data)
-
-        const res = await axios.get("http://localhost:4000/api/books");
+        const params = new URLSearchParams(location.search);
+        const search = params.get('search') || '';
+        const res = await axios.get(`http://localhost:4000/api/books?search=${search}`);
+        console.log(res)
         setBooks(res.data);
         
       } catch (ex) {
@@ -22,7 +36,7 @@ function Books() {
     };
 
     CallAPI()
-  }, [books]);
+  }, [location.search]);
 
 
   const deleteBook = async (id) => {

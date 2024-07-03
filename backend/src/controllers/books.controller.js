@@ -3,7 +3,16 @@ import booksModels from '../models/books.models.js'
 const booksController = {}
 
 booksController.getBooks = async (req, res) => {
-    const books = await booksModels.find()
+    const { search } = req.query;
+    let books;
+
+    if (search) {
+      books = await booksModels.find({ title: { $regex: search, $options: 'i' } });
+    } else {
+      books = await booksModels.find();
+    }
+
+    // const books = await booksModels.find()
     res.json(books)
 }
 
@@ -67,5 +76,16 @@ booksController.updateBook = async (req, res) => {
     })
     res.json(Books)
 }
+
+booksController.getBooksByGenre = async (req, res) => {
+    const genre = req.params.genre;
+    try {
+        const books = await Book.find({ genre: genre });
+        res.json(books);
+    } catch (ex) {
+        res.status(500).json({ message: ex.message });
+    }
+};
+
 
 export default booksController
