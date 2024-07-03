@@ -43,8 +43,17 @@ booksController.getOneBook = async (req, res) => {
 }
 
 booksController.deleteBook = async (req, res) => {
-    const book = await booksModels.findByIdAndDelete(req.params.id)
-    res.json(book)
+    try {
+            const book = await booksModels.findByIdAndDelete(req.params.id)
+            if (!book) {
+                return res.status(404).json({ message: 'Libro no encontrado' });
+            }
+            res.json(book);
+        
+    } catch (ex) {
+        console.error('Error al obtener el libro:', ex);
+        res.status(500).json({ message: 'Error al obtener el libro' });
+    }
 }
 
 booksController.updateBook = async (req, res) => {

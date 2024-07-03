@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function BtnDark({text}) {
+function BtnDark({text, to, icon}) {
   return (
-    <button className='btnDark'>
-        <span>{text}</span>
-    </button>
+    <Link to={to} className='btnDark'>
+        <span>{icon} {text}</span>
+    </Link>
   )
 }
 

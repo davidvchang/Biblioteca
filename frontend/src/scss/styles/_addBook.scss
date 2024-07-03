@@ -1,0 +1,102 @@
+@import '../variables';
+
+.AddBook {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 83vh;
+
+    .form {
+        min-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+
+            input, textarea {
+                width: 400px;
+                padding: 8px;
+                font-size: 14px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .btnButton {
+
+            button {
+
+                background-color: #007bff;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 300px;
+                align-self: center;
+                justify-content: center;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+                transition: all;
+                transition-duration: 0.3s;
+            }
+        }
+
+        .messagesAddBook {
+            margin-top: 15px;
+    
+            .saveCorrectMessage {
+                background-color: green;
+                text-align: center;
+                padding: 5px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        
+            .saveErrorMessage {
+                background-color: red;
+                text-align: center;
+                padding: 5px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .btnUpdate{
+        background-color: #a8931b;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 300px;
+        align-self: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .btnUpdate:hover {
+        background-color: #88781c;
+        transition: all;
+        transition-duration: 0.3s;
+    }
+}

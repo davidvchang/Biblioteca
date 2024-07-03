@@ -4,14 +4,29 @@
     background-color: #202020;
     border: none;
     padding: 12px 30px;
-    height: fit-content;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 8px;
     cursor: pointer;
+    text-decoration: none;
+    
 
     span {
         color: #f1f1f1;
         font-weight: 600;
         font-size: 14px;
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .iconsActions, .iconFavorite {
+            width: 20px;
+            height: 20px;
+        }
+
     }
 }
 

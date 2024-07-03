@@ -1,0 +1,95 @@
+@import '../variables';
+
+.Books {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 60px;
+    row-gap: 40px;
+    column-gap: 100px;
+
+    .BookCard {
+        display: flex;
+        flex-direction: column;
+        color: #202020;
+        gap: 2px;
+        width: 500px;
+        min-height: 200px;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .containerTitleAuthorSummary {
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-size: 25px;
+                font-weight: 500;
+            }
+    
+            .author {
+                color: #707070;
+            }
+        }
+
+        .containerYearGenreIcons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .yearGenre {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+                color: #707070;
+                margin-top: 5px;
+            }
+    
+            .containerActions{
+                
+                flex-direction: row;
+                gap: 20px;
+                display: flex;
+
+                .button {
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center;
+                    border: none;
+                    cursor: pointer;
+                    color: black;
+
+                    .iconsActions {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                .button:visited {
+                    color: #202020;
+                }
+
+                .button:hover {
+                    background-color: white;
+
+                    .iconFavorite {
+                        color: red;
+                    }
+
+                    .iconEdit {
+                        color: rgb(255, 136, 0)
+                    }
+                    
+                    .iconDelete {
+                        color: rgb(40, 68, 224);
+                    }
+                }
+    
+            }
+        }
+
+    }
+}
