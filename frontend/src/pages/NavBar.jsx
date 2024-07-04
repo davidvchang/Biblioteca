@@ -4,10 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
 
 function NavBar() {
-
-  const valueInictialSearchInput = ""
   
   const [genresArray, setGenresArray] = useState([])
+  const [selectedGenre, setSelectedGenre] = useState('')
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
@@ -42,10 +41,12 @@ function NavBar() {
 
   const handleGenreChange = (e) => {
     const selectedGenre = e.target.value;
-    if (selectedGenre) {
-      navigate(`/genre/${selectedGenre}`);
-    } else {
+    setSelectedGenre(selectedGenre)
+
+    if(selectedGenre === "") {
       navigate('/');
+    } else {
+      navigate(`/?genre=${selectedGenre}`);
     }
   };
 
@@ -86,7 +87,7 @@ function NavBar() {
             />
         </form>
 
-          <select id="Género" onChange={handleGenreChange}>
+          <select value={selectedGenre} id="Género" onChange={handleGenreChange}>
             <option value="">Seleccionar Género</option>
             {genresArray.map((genres, index) => (
               <option key={index} value={genres}>{genres}</option>

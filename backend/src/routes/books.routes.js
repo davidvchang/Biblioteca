@@ -12,7 +12,4 @@ router.route('/:id')
     .put(booksControllers.updateBook)
     .delete(booksControllers.deleteBook)
 
-router.route('/genre/:genre')
-    .get(booksControllers.getBooksByGenre)
-
 export default router

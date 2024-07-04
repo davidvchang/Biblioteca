@@ -9,25 +9,17 @@ function Books() {
   const location = useLocation();
 
 
-  const searchByGenre = async (genre) => {
-    try {
-        const response = await axios.get(`http://localhost:4000/api/books/genre/${genre}`);
-        console.log(response.data); // Verifica que los datos devueltos son los esperados
-    } catch (error) {
-        console.error('Error al buscar por género:', error);
-    }
-};
-
   useEffect(() => {
     const CallAPI = async () => {
       try {
         // const res = await fetch("http://localhost:4000/api/books")
         // const data = await res.json()
         // setBooks(data)
+        
         const params = new URLSearchParams(location.search);
         const search = params.get('search') || '';
-        const res = await axios.get(`http://localhost:4000/api/books?search=${search}`);
-        console.log(res)
+        const genre = params.get('genre') || '';
+        const res = await axios.get(`http://localhost:4000/api/books?search=${search}&genre=${genre}`);
         setBooks(res.data);
         
       } catch (ex) {
