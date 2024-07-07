@@ -1,15 +1,15 @@
 import { Router } from 'express';
 import booksControllers from "../controllers/books.controller.js";
+import authMiddleware  from "../middlewares/auth.middleware.js";
 
 const router = Router()
 
-router.route('/')
-    .get(booksControllers.getBooks)
-    .post(booksControllers.postBook)
+router.get('/', booksControllers.getBooks)
+router.post('/', authMiddleware, booksControllers.postBook)
 
-router.route('/:id')
-    .get(booksControllers.getOneBook)
-    .put(booksControllers.updateBook)
-    .delete(booksControllers.deleteBook)
+
+router.get('/:id', authMiddleware, booksControllers.getOneBook)
+router.put('/:id', authMiddleware, booksControllers.updateBook)
+router.delete('/:id', authMiddleware, booksControllers.deleteBook)
 
 export default router

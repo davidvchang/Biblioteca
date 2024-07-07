@@ -33,7 +33,11 @@ function Books() {
 
   const deleteBook = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/books/${id}`)
+      await axios.delete(`http://localhost:4000/api/books/${id}`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+        }
+      })
       setBooks(books.filter(book => book._id !== id)); // Actualiza el estado después de eliminar
       
     } catch (ex) {

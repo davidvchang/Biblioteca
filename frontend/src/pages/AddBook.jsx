@@ -40,24 +40,37 @@ function AddBook() {
                 genre: dataBooks.genre
             }
 
+            let res;
+
             if (id) {
-                await axios.put(`http://localhost:4000/api/books/${id}`, newBook);
+                res = await axios.put(`http://localhost:4000/api/books/${id}`, newBook, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
                 setMessage('Libro actualizado correctamente');
             } else {
-                await axios.post('http://localhost:4000/api/books', newBook);
+                res = await axios.post('http://localhost:4000/api/books', newBook, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('token')}`
+                    }
+                });
                 setMessage('Libro guardado correctamente');
             }
-
             setDataBooks({...initialValue}) //Limpia el formulario trayendo los valores iniciales
             navigate('/');
         } catch (ex) {
-            setMessage('Ha ocurrido un error al guardar')
+            setMessage(`${ex}`)
         }
     }
     
     const getOne = async (valueId) => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/books/${valueId}`)
+            const res = await axios.get(`http://localhost:4000/api/books/${valueId}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`
+                }
+            })
             setDataBooks({
                 title: res.data.title,
                 author: res.data.author,
@@ -76,28 +89,7 @@ function AddBook() {
         const {name, value} = e.target
         setDataBooks({...dataBooks, [name]: value})
     }
-
-      
-      
-
-    // //ACTUALIZAR LIBROS
-    // const updateBook = async (e) => {
-    //     e.preventDefault();
-    //     const newBook = {
-    //         title: dataBooks.title,
-    //         author: dataBooks.author,
-    //         summary: dataBooks.summary,
-    //         year: dataBooks.year,
-    //         genre: dataBooks.genre
-    //     }
-
-    //     await axios.put('http://localhost:4000/api/books/' + subId, newBook)
-    //     setDataBooks({...initialValue})
-    //     setSubId('')
-    // }
-
-
-
+    
   return (
     <section className='AddBook'>
       <form className='form' onSubmit={saveBook}>
@@ -142,10 +134,6 @@ function AddBook() {
             </div>
         )}
         </form>
-
-        {/* <form onSubmit={updateBook}>
-            <button className='btnUpdate'>Update Client</button>
-      </form> */}
     </section>
   )
 }

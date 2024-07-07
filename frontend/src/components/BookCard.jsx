@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useAuth } from '../context/AuthContext';
 
 function BookCard({title, author, summary, year, genre, clickDelete, clickUpdate}) {
+
+    const { isAuthenticated } = useAuth();
     
   return (
     <div className='BookCard'>
@@ -19,17 +22,21 @@ function BookCard({title, author, summary, year, genre, clickDelete, clickUpdate
             </div>
 
             <div className='containerActions'>
-                <Link to={clickUpdate} className='btnEdit button'>
-                    {iconEdit}
-                </Link>
+                {isAuthenticated && (
+                    <>
+                        <Link to={clickUpdate} className='btnEdit button'>
+                            {iconEdit}
+                        </Link>
 
-                <button className='btnDelete button' onClick={clickDelete}>
-                    {iconDelete}
-                </button>
+                        <button className='btnDelete button' onClick={clickDelete}>
+                            {iconDelete}
+                        </button>
 
-                <button className='btnFavorite button'>
-                    {iconFavorite}
-                </button>
+                        <button className='btnFavorite button'>
+                            {iconFavorite}
+                        </button>
+                    </>
+                )}
             </div>
         </div>
 

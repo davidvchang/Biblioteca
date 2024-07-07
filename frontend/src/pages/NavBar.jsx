@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import BtnDark from '../components/BtnDark'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios";
+import { useAuth } from '../context/AuthContext';
 
 function NavBar() {
   
@@ -9,7 +10,8 @@ function NavBar() {
   const [selectedGenre, setSelectedGenre] = useState('')
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-
+  const { isAuthenticated } = useAuth();
+  const { logout } = useAuth();
 
   const favorites = 0
 
@@ -64,6 +66,19 @@ function NavBar() {
       }
     }
   };
+
+  const logoutSesion = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('http://localhost:4000/api/users/logout');
+      const token = res.data.token;
+      localStorage.setItem('token', token);
+      logout();
+      navigate('/');
+    } catch (err) {
+      console.error('Error en el cerrar sesión:', err);
+    }
+  };
   
 
   return (
@@ -71,7 +86,8 @@ function NavBar() {
       <div className='containerTitleButton'>
         <span className='title'>Biblioteca</span>
         
-        <BtnDark text='Iniciar Sesión' to='/login'/>
+        {isAuthenticated ? <button onClick={logoutSesion} className='btnLogout'><span>Cerrar Sesión</span></button> : <BtnDark text='Iniciar Sesión' to='/login'/>}
+        
        
       </div>
 
@@ -96,12 +112,15 @@ function NavBar() {
         </div>
 
         <BtnDark icon={iconFavorite} text={`Favoritos (${favorites})`}/>
+          <div className='containerAddBook'>
+            <Link to='/' className='booksList'>Ver Libros</Link>
 
-        <div className='containerAddBook'>
-          <Link to='/' className='booksList'>Ver Libros</Link>
-          <BtnDark text='Agregar Libro' to='/add-book'/>
+            {isAuthenticated && (
+              <BtnDark text='Agregar Libro' to='/add-book'/>
 
-        </div>
+            )}
+
+          </div>
       </div>
 
     </section>
