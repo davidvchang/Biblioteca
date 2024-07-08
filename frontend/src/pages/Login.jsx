@@ -16,12 +16,15 @@ function Login() {
     try {
       const res = await axios.post('http://localhost:4000/api/users/login', { email, password });
       // const res = await axiosInstance.post('/users/login', { email, password });
-      const token= res.data.token;
+      // const token = res.data.token;
+      const token = res.data.token;
+      const userEmail = res.data.email
       localStorage.setItem('token', token);
-      login();
+      login({email: userEmail}); // Pasar la información del usuario al contexto
       navigate('/');
     } catch (ex) {
-      setMessage(ex.response.data.message)
+      // setMessage(ex.response.data.message)
+      console.log(ex)
     }
   };
 

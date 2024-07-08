@@ -16,41 +16,55 @@
         width: 100%;
         justify-content: space-between;
 
-        .btnLogout{
-            background-color: #f1f1f1;
-            border: none;
-            padding: 12px 30px;
-            min-height: 24px;
+        .messageButton {
             display: flex;
-            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
             align-items: center;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            border: #202020 1px solid;
-            
-            span {
-                color: #202020;
-                font-weight: 600;
-                font-size: 14px;
-                flex-direction: row;
+
+            .greeting {
+                color: #505050;
+                font-weight: 400;
+                font-size: 18px;
+            }
+
+            .btnLogout{
+                background-color: #f1f1f1;
+                border: none;
+                padding: 12px 30px;
+                min-height: 24px;
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 10px;
-        
-                .iconsActions, .iconFavorite {
-                    width: 20px;
-                    height: 20px;
+                border-radius: 8px;
+                cursor: pointer;
+                text-decoration: none;
+                border: #202020 1px solid;
+                
+                span {
+                    color: #202020;
+                    font-weight: 600;
+                    font-size: 14px;
+                    flex-direction: row;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+            
+                    .iconsActions, .iconFavorite {
+                        width: 20px;
+                        height: 20px;
+                    }
+            
                 }
-        
+            }
+            
+            .btnLogout:hover {
+                background-color: #d5d5d5;
+                transition: all;
+                transition-duration: 0.3s;
             }
         }
-        
-        .btnLogout:hover {
-            background-color: #d5d5d5;
-            transition: all;
-            transition-duration: 0.3s;
-        }
+
 
         
     }
@@ -74,7 +88,10 @@
             }
     
             select {
-                padding: 0 10px;
+                padding: 10px;
+                font-weight: 300;
+                font-size: 14px;
+                color: #606060;
             }
         }
 
@@ -98,4 +115,1004 @@
         }
     }
 
+    .navMovil {
+        display: none;
+    }
+    .openedMenu {
+        display: none;
+    }
+
+
+
+}
+
+@media (min-width: 1281px) and (max-width: 1536px) {
+    .Nav {
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+        font-weight: 500;
+        padding: 20px 40px;
+        gap: 20px;
+    
+        .containerTitleButton {
+    
+            .messageButton {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+    
+                .greeting {
+                    color: #505050;
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+    
+                .btnLogout{
+                    
+                    span {
+                
+                        .iconsActions, .iconFavorite {
+                            width: 20px;
+                            height: 20px;
+                        }
+                
+                    }
+                }
+            }
+    
+    
+            
+        }
+    
+        .searchAddBook {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            .searchInput {
+                display: flex;
+                height: fit-content;
+                flex-direction: row;
+                width: 500px;
+                justify-content: space-between;
+                align-items: end;
+        
+                input {
+                    padding: 10px;
+                    font-size: 14px;
+                    border-radius: 5px;
+                    border: 1px solid #a1a1a1;
+                }
+        
+                select {
+                    padding: 10px;
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: #606060;
+                    
+                }
+
+                select:hover {
+                    color: #404040;
+                }
+            }
+        
+            .containerAddBook {
+    
+                .booksList {
+                    font-size: 18px;
+                    
+                }
+            }
+        }
+    
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .Nav {
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 20px 40px;
+        gap: 20px;
+    
+        .containerTitleButton {
+    
+            .messageButton {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                align-items: center;
+    
+                .greeting {
+                    color: #505050;
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+    
+                .btnLogout{
+                    padding: 12px 20px;
+                    
+                    span {
+                        
+                        font-size: 13px;
+                        .iconsActions, .iconFavorite {
+                            width: 20px;
+                            height: 20px;
+                        }
+                
+                    }
+                }
+            }
+    
+    
+            
+        }
+    
+        .searchAddBook {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+    
+            .searchInput {
+                display: flex;
+                height: fit-content;
+                flex-direction: row;
+                width: 500px;
+                justify-content: space-between;
+                align-items: end;
+        
+                input {
+                    padding: 8px 10px;
+                    font-size: 13px;
+                    border-radius: 5px;
+                    border: 1px solid #a1a1a1;
+                }
+        
+                select {
+                    padding: 8px 10px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #606060;
+                    
+                }
+
+                select:hover {
+                    color: #404040;
+                }
+            }
+        
+            .containerAddBook {
+    
+                .booksList {
+                    font-size: 16px;
+                    
+                }
+            }
+        }
+    
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 20px 40px;
+        gap: 20px;
+    
+        .containerTitleButton {
+            display: flex;
+    
+            .messageButton {
+                display: none;
+                flex-direction: row;
+                align-items: center;
+    
+                .greeting {
+                    color: #505050;
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+    
+                .btnLogout{
+                    display: none;
+                }
+            }
+            .navMovil {
+                display: flex;
+                width: fit-content;
+                height: fit-content;
+                border: none;
+                background-color: white;
+                
+                .btnOpenMenu {
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    border-radius: 5px;
+        
+                    .btnMenuMovil {
+                        min-width: 40px;
+                        min-height: 40px;
+                    }
+                    .btnMenuMovil:hover{
+                        color: #707070;
+                        cursor: pointer;
+                        transition: all;
+                            transition-duration: 0.3s;
+                    }
+                }
+    
+                .btnOpenMenu:hover {
+                    background-color: white;
+                    cursor: pointer;
+                    transition: all;
+                    transition-duration: 0.3s;
+                }
+    
+                .openedMenu {
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    z-index: 50;
+                    background-color: #909090;
+                    width: 500px;
+                    height: 330px;
+                    right: 0;
+                    top: 0;
+                    border-radius: 5px;
+                    border: #909090 1px solid;
+                    box-shadow: 0 4px 8px rgba(136, 134, 134, 0.9);
+                    overflow: hidden;
+                    transition: all;
+                    transition-duration: 0.3s;
+        
+                    .topMenu {
+                        display: flex;
+                        flex-direction: row;
+                        padding: 25px 40px 25px 40px;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: #a5a5a5 1px solid;
+                        background-color: #f1f1f1;
+                        
+                        span {
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+        
+                        button {
+                            padding: 0;
+                            align-items: center;
+                            border-radius: 5px;
+                            display: flex;
+                            width: fit-content;
+                            height: fit-content;
+                            border: none;
+                            background-color: #f1f1f1;
+        
+                            .btnMenuMovil {
+                                min-width: 40px;
+                                min-height: 40px;
+                            }
+        
+                            .btnMenuMovil:hover {
+                                color: #707070;
+                                cursor: pointer;
+                                transition: all;
+                                transition-duration: 0.3s;
+                            }
+                        }
+                    }
+        
+                    .optionsMenu {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px 10px;
+                        align-items: center;
+                        gap: 20px;
+                        background-color: #f1f1f1;
+        
+                        .booksList {
+                            text-decoration: none;
+                            color: #202020;
+                            font-size: 16px;
+                            font-weight: 400;
+                            padding: 7px 0;
+                        }
+        
+                        .booksList:hover {
+                            color: #606060;
+                            transition: all;
+                            transition-duration: 0.3s;
+                        }
+        
+                        .addBook{
+                            text-decoration: none;
+                            color: #202020;
+                            font-size: 16px;
+                            font-weight: 400;
+                            padding: 7px 0;
+                        }
+        
+                        .btnLogout {
+                            background-color: #202020;
+                            border: none;
+                            padding: 10px;
+                            width: 100%;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            text-decoration: none;
+                            border: #202020 1px solid;
+        
+                            span {
+                                color: #f1f1f1;
+                                font-weight: 500;
+                                font-size: 14px;
+                                flex-direction: row;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+        
+                        .btnLogout:hover {
+                            background-color: #404040;
+                            transition: all;
+                            transition-duration: 0.3s;
+                        }
+        
+                        .btnDark {
+                            background-color: #202020;
+                            border: none;
+                            padding: 10px;
+                            width: 95%;
+                            min-height: 24px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            text-decoration: none;
+                            border: #202020 1px solid;
+                            border-radius: 0%;
+        
+                            span {
+                                color: #f1f1f1;
+                                font-weight: 500;
+                                font-size: 14px;
+                                flex-direction: row;
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+        
+                        .btnDark:hover {
+                            background-color: #404040;
+                            transition: all;
+                            transition-duration: 0.3s;
+                        }
+                    }
+                }
+    
+                .closedMenu {
+                    height: 0px;
+                }
+        
+                .containerHiddenMenu {
+                    display: none;
+                }
+    
+                
+            }
+        }
+    
+        .searchAddBook {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .searchInput {
+                display: flex;
+                height: fit-content;
+                flex-direction: row;
+                width: 450px;
+                justify-content: space-between;
+                align-items: center;
+
+                form {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        padding: 8px 10px;
+                        font-size: 13px;
+                        border-radius: 5px;
+                        border: 1px solid #a1a1a1;
+                    }
+                }
+        
+        
+                select {
+                    padding: 8px 10px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #606060;
+                    
+                }
+
+                select:hover {
+                    color: #404040;
+                }
+            }
+        
+            .containerAddBook {
+                display: none;
+            }
+        }
+
+        
+        
+        
+        
+
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .Nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 20px 40px;
+        gap: 20px;
+    
+        .containerTitleButton {
+    
+            .messageButton {
+                display: none;
+                flex-direction: row;
+                align-items: center;
+    
+                .greeting {
+                    color: #505050;
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+    
+                .btnLogout{
+                    display: none;
+                }
+            }
+        }
+    
+        .searchAddBook {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .searchInput {
+                display: flex;
+                height: fit-content;
+                flex-direction: row;
+                width: 450px;
+                justify-content: space-between;
+                align-items: center;
+
+                form {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        padding: 8px 10px;
+                        font-size: 13px;
+                        border-radius: 5px;
+                        border: 1px solid #a1a1a1;
+                    }
+                }
+        
+        
+                select {
+                    padding: 8px 10px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #606060;
+                    
+                }
+
+                select:hover {
+                    color: #404040;
+                }
+            }
+        
+            .containerAddBook {
+                display: none;
+            }
+        }
+
+        
+        .navMovil {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            border: none;
+            background-color: white;
+            
+            .btnOpenMenu {
+                padding: 0;
+                display: flex;
+                align-items: center;
+                border: none;
+                border-radius: 5px;
+    
+                .btnMenuMovil {
+                    min-width: 40px;
+                    min-height: 40px;
+                }
+                .btnMenuMovil:hover{
+                    color: #707070;
+                    cursor: pointer;
+                    transition: all;
+                        transition-duration: 0.3s;
+                }
+            }
+
+            .btnOpenMenu:hover {
+                background-color: white;
+                cursor: pointer;
+                transition: all;
+                transition-duration: 0.3s;
+            }
+
+            .openedMenu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                z-index: 50;
+                background-color: #909090;
+                width: 500px;
+                height: 330px;
+                right: 0;
+                top: 0;
+                border-radius: 5px;
+                border: #909090 1px solid;
+                box-shadow: 0 4px 8px rgba(136, 134, 134, 0.9);
+                overflow: hidden;
+                transition: all;
+                transition-duration: 0.3s;
+    
+                .topMenu {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 25px 40px 25px 40px;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: #a5a5a5 1px solid;
+                    background-color: #f1f1f1;
+                    
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+    
+                    button {
+                        padding: 0;
+                        align-items: center;
+                        border-radius: 5px;
+                        display: flex;
+                        width: fit-content;
+                        height: fit-content;
+                        border: none;
+                        background-color: #f1f1f1;
+    
+                        .btnMenuMovil {
+                            min-width: 40px;
+                            min-height: 40px;
+                        }
+    
+                        .btnMenuMovil:hover {
+                            color: #707070;
+                            cursor: pointer;
+                            transition: all;
+                            transition-duration: 0.3s;
+                        }
+                    }
+                }
+    
+                .optionsMenu {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px 10px;
+                    align-items: center;
+                    gap: 20px;
+                    background-color: #f1f1f1;
+    
+                    .booksList {
+                        text-decoration: none;
+                        color: #202020;
+                        font-size: 16px;
+                        font-weight: 400;
+                        padding: 7px 0;
+                    }
+    
+                    .booksList:hover {
+                        color: #606060;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .addBook{
+                        text-decoration: none;
+                        color: #202020;
+                        font-size: 16px;
+                        font-weight: 400;
+                        padding: 7px 0;
+                    }
+    
+                    .btnLogout {
+                        background-color: #202020;
+                        border: none;
+                        padding: 10px;
+                        width: 100%;
+                        min-height: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        text-decoration: none;
+                        border: #202020 1px solid;
+    
+                        span {
+                            color: #f1f1f1;
+                            font-weight: 500;
+                            font-size: 14px;
+                            flex-direction: row;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+    
+                    .btnLogout:hover {
+                        background-color: #404040;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .btnDark {
+                        background-color: #202020;
+                        border: none;
+                        padding: 10px;
+                        width: 95%;
+                        min-height: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        text-decoration: none;
+                        border: #202020 1px solid;
+                        border-radius: 0%;
+    
+                        span {
+                            color: #f1f1f1;
+                            font-weight: 500;
+                            font-size: 14px;
+                            flex-direction: row;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+    
+                    .btnDark:hover {
+                        background-color: #404040;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+                }
+            }
+
+            .closedMenu {
+                height: 0px;
+            }
+    
+            .containerHiddenMenu {
+                display: none;
+            }
+
+            
+        }
+        
+        
+
+    }
+}
+
+@media (max-width: 641px) {
+    .Nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 14px;
+        gap: 20px;
+    
+        .containerTitleButton {
+    
+            .messageButton {
+                display: none;
+                flex-direction: row;
+                align-items: center;
+    
+                .greeting {
+                    color: #505050;
+                    font-weight: 400;
+                    font-size: 17px;
+                }
+    
+                .btnLogout{
+                    display: none;
+                }
+            }
+        }
+    
+        .searchAddBook {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .searchInput {
+                display: flex;
+                height: fit-content;
+                flex-wrap: wrap;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                row-gap: 10px;
+                column-gap: 10px;
+
+                form {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        padding: 8px 10px;
+                        font-size: 13px;
+                        border-radius: 5px;
+                        border: 1px solid #a1a1a1;
+                        width: 180px;
+                    }
+                }
+        
+        
+                select {
+                    padding: 8px 10px;
+                    font-size: 13px;
+                    font-weight: 300;
+                    color: #606060;
+                    border: 1px solid #a1a1a1;
+                    border-radius: 5px;
+                    width: 150px;
+                    
+                }
+
+                select:hover {
+                    color: #404040;
+                }
+            }
+        
+            .containerAddBook {
+                display: none;
+            }
+        }
+
+        
+        .navMovil {
+            display: flex;
+            width: fit-content;
+            height: fit-content;
+            border: none;
+            background-color: white;
+            
+            .btnOpenMenu {
+                padding: 0;
+                display: flex;
+                align-items: center;
+                border: none;
+                border-radius: 5px;
+    
+                .btnMenuMovil {
+                    min-width: 40px;
+                    min-height: 40px;
+                }
+                .btnMenuMovil:hover{
+                    color: #707070;
+                    cursor: pointer;
+                    transition: all;
+                        transition-duration: 0.3s;
+                }
+            }
+
+            .btnOpenMenu:hover {
+                background-color: white;
+                cursor: pointer;
+                transition: all;
+                transition-duration: 0.3s;
+            }
+
+            .openedMenu {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                z-index: 50;
+                background-color: #909090;
+                width: 100%;
+                // height: 275px;
+                height: 318px;
+                right: 0;
+                top: 0;
+                border-radius: 5px;
+                border: #909090 1px solid;
+                box-shadow: 0 4px 8px rgba(136, 134, 134, 0.9);
+                overflow: hidden;
+                transition: all;
+                transition-duration: 0.3s;
+    
+                .topMenu {
+                    display: flex;
+                    flex-direction: row;
+                    padding: 14px 14px 25px 14px;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: #a5a5a5 1px solid;
+                    background-color: #f1f1f1;
+                    
+                    span {
+                        font-size: 16px;
+                        font-weight: 400;
+                    }
+    
+                    button {
+                        padding: 0;
+                        align-items: center;
+                        border-radius: 5px;
+                        display: flex;
+                        width: fit-content;
+                        height: fit-content;
+                        border: none;
+                        background-color: #f1f1f1;
+    
+                        .btnMenuMovil {
+                            min-width: 40px;
+                            min-height: 40px;
+                        }
+    
+                        .btnMenuMovil:hover {
+                            color: #707070;
+                            cursor: pointer;
+                            transition: all;
+                            transition-duration: 0.3s;
+                        }
+                    }
+                }
+    
+                .optionsMenu {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px 10px;
+                    align-items: center;
+                    gap: 20px;
+                    background-color: #f1f1f1;
+    
+                    .booksList {
+                        text-decoration: none;
+                        color: #202020;
+                        font-size: 16px;
+                        font-weight: 400;
+                        padding: 7px 0;
+                    }
+    
+                    .booksList:hover {
+                        color: #606060;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .addBook{
+                        text-decoration: none;
+                        color: #202020;
+                        font-size: 16px;
+                        font-weight: 400;
+                        padding: 7px 0;
+                    }
+    
+                    .btnLogout {
+                        background-color: #202020;
+                        border: none;
+                        padding: 10px;
+                        width: 100%;
+                        min-height: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        text-decoration: none;
+                        border: #202020 1px solid;
+    
+                        span {
+                            color: #f1f1f1;
+                            font-weight: 500;
+                            font-size: 14px;
+                            flex-direction: row;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+    
+                    .btnLogout:hover {
+                        background-color: #404040;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .btnDark {
+                        background-color: #202020;
+                        border: none;
+                        padding: 10px;
+                        width: 95%;
+                        min-height: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        text-decoration: none;
+                        border: #202020 1px solid;
+                        border-radius: 0%;
+    
+                        span {
+                            color: #f1f1f1;
+                            font-weight: 500;
+                            font-size: 14px;
+                            flex-direction: row;
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+    
+                    .btnDark:hover {
+                        background-color: #404040;
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+                }
+            }
+
+            .closedMenu {
+                height: 0px;
+            }
+    
+            .containerHiddenMenu {
+                display: none;
+            }
+
+            
+        }
+        
+        
+
+    }
 }

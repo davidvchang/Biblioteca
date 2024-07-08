@@ -4,8 +4,10 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px 60px;
+    justify-content: space-around;
+    align-items: start;
     row-gap: 40px;
-    column-gap: 100px;
+    column-gap: 10px;
 
     .BookCard {
         display: flex;
@@ -68,28 +70,289 @@
                     }
                 }
 
+                .btnFavorite .iconFavorite{
+                    fill: white;
+                }
+
                 .button:visited {
                     color: #202020;
                 }
 
                 .button:hover {
                     background-color: white;
+                    
 
                     .iconFavorite {
                         color: red;
+                        fill: red;
+                        transition: fill 0.3s ease;
                     }
 
                     .iconEdit {
-                        color: rgb(255, 136, 0)
+                        color: rgb(255, 136, 0);
+                        transition: all;
+                        transition-duration: 0.3s;
                     }
                     
                     .iconDelete {
                         color: rgb(40, 68, 224);
+                        transition: all;
+                        transition-duration: 0.3s;
                     }
                 }
     
             }
         }
 
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1536px) {
+    .Books {
+        row-gap: 40px;
+        column-gap: 10px;
+        justify-content: space-around;
+        padding: 20px 40px;
+
+        .BookCard {
+    
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 24px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 16px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+        
+                .containerActions{
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .Books {
+        row-gap: 40px;
+        column-gap: 10px;
+        justify-content: center;
+
+        .BookCard {
+            width: 430px;
+            
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 22px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 14px;
+                }
+
+                .summary {
+                    font-size: 14px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+
+                .yearGenre {
+                    color: #707070;
+                    font-size: 14px;
+                }
+        
+                .containerActions{
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .Books {
+        row-gap: 40px;
+        column-gap: 10px;
+        justify-content: center;
+
+        .BookCard {
+            width: 400px;
+            min-height: 200px;
+
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 22px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 14px;
+                }
+
+                .summary {
+                    font-size: 14px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+
+                .yearGenre {
+                    color: #707070;
+                    font-size: 14px;
+                }
+        
+                .containerActions{
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
+    }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+    .Books {
+        row-gap: 10px;
+        justify-content: center;
+
+        .BookCard {
+            width: 450px;
+            min-height: 200px;
+
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 22px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 14px;
+                }
+
+                .summary {
+                    font-size: 14px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+
+                .yearGenre {
+                    color: #707070;
+                    font-size: 14px;
+                }
+        
+                .containerActions{
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .Books {
+        gap: 30px;
+        justify-content: center;
+        padding: 20px 0;
+
+        .BookCard {
+            width: 100vw;
+            min-height: 200px;
+            box-shadow: 0 4px 8px rgb(175, 175, 175);
+            border-radius: 0;
+
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 22px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 14px;
+                }
+
+                .summary {
+                    font-size: 14px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+
+                .yearGenre {
+                    color: #707070;
+                    font-size: 14px;
+                }
+        
+                .containerActions{
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
     }
 }
