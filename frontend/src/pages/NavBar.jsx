@@ -97,7 +97,7 @@ function NavBar() {
           <button className='btnOpenMenu' onClick={() => setMenuMovil(true)}>{iconOpenMenu}</button>
         
           {/* MENU ABIERTO */}
-          <div className={`${menuMovil ? 'openedMenu' : 'closedMenu'}`}>
+          <div className={`${menuMovil ? !isAuthenticated ? 'openedMenu' : 'openedMenuAuthenticated' : 'closedMenu'}`}>
             <div className={`${!menuMovil && 'containerHiddenMenu'}`}>
               <div className='topMenu'>
                 <span>{isAuthenticated ? `Hola, ${user?.email}` : ''}</span>

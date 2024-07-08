@@ -23,7 +23,7 @@ function Login() {
       login({email: userEmail}); // Pasar la información del usuario al contexto
       navigate('/');
     } catch (ex) {
-      // setMessage(ex.response.data.message)
+      setMessage(ex.response.data.message)
       console.log(ex)
     }
   };
