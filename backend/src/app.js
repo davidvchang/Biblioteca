@@ -6,7 +6,6 @@ import cookieParser from "cookie-parser";
 
 import bookRoutes from "./routes/books.routes.js";
 import userRoutes from "./routes/users.routes.js";
-import authRoutes from "./routes/auth.routes.js";
 
 const app = express()
 
@@ -26,7 +25,6 @@ app.use(express.json())
 app.use(cookieParser())
 
 //ROUTES
-app.use('/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/books', bookRoutes)
 
