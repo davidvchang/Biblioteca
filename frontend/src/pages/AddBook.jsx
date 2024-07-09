@@ -20,6 +20,8 @@ function AddBook() {
     // const [subId, setSubId] = useState(id)
     const navigate = useNavigate()
 
+    const urlBooks = 'https://biblioteca-0vy8.onrender.com/api/books'
+
     //Hacer una pedicion a la API
     useEffect(() => {
         if(id) {
@@ -43,14 +45,14 @@ function AddBook() {
             let res;
 
             if (id) {
-                res = await axios.put(`http://localhost:4000/api/books/${id}`, newBook, {
+                res = await axios.put(`${urlBooks}/${id}`, newBook, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
                 });
                 setMessage('Libro actualizado correctamente');
             } else {
-                res = await axios.post('http://localhost:4000/api/books', newBook, {
+                res = await axios.post(`${urlBooks}`, newBook, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -66,7 +68,7 @@ function AddBook() {
     
     const getOne = async (valueId) => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/books/${valueId}`, {
+            const res = await axios.get(`${urlBooks}/${valueId}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

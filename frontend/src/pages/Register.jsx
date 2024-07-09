@@ -14,6 +14,8 @@ const [users, setUsers] = useState(initialValue);
 const [message, setMessage] = useState('');
 const navigate = useNavigate();
 
+const urlUsers = 'https://biblioteca-0vy8.onrender.com/api/users'
+
 const registerUser = async (e) => {
     e.preventDefault();
 
@@ -25,7 +27,7 @@ const registerUser = async (e) => {
         password: users.password,
       }
 
-      const res = await axios.post('http://localhost:4000/api/users', newUser);
+      const res = await axios.post(`${urlUsers}`, newUser);
       console.log(res)
       setMessage('Usuario creado correctamente');
       setUsers({...initialValue}) //Limpia el formulario trayendo los valores iniciales

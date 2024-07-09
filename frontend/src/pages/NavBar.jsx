@@ -16,8 +16,11 @@ function NavBar() {
   //ABRIR MENU DESPLEGABLE
   const [menuMovil, setMenuMovil] = useState(false)
 
+  const urlBooks = 'https://biblioteca-0vy8.onrender.com/api/books'
+  const urlLogout = 'https://biblioteca-0vy8.onrender.com/api/users/logout'
+
   const getGenres = async () => {
-    const response = await axios.get('http://localhost:4000/api/books');
+    const response = await axios.get(`${urlBooks}`);
     const data = response.data;
 
     // Verificar si hay datos y si es un array con al menos un elemento
@@ -71,7 +74,7 @@ function NavBar() {
   const logoutSesion = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:4000/api/users/logout');
+      const res = await axios.post(`${urlLogout}`);
       const token = res.data.token;
       localStorage.setItem('token', token);
       logout();

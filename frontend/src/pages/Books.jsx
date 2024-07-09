@@ -8,6 +8,8 @@ function Books() {
   const [books, setBooks] = useState([])
   const location = useLocation();
 
+  const urlBooks = 'https://biblioteca-0vy8.onrender.com/api/books'
+
 
   useEffect(() => {
     const CallAPI = async () => {
@@ -19,7 +21,7 @@ function Books() {
         const params = new URLSearchParams(location.search);
         const search = params.get('search') || '';
         const genre = params.get('genre') || '';
-        const res = await axios.get(`http://localhost:4000/api/books?search=${search}&genre=${genre}`);
+        const res = await axios.get(`${urlBooks}?search=${search}&genre=${genre}`);
         setBooks(res.data);
         
       } catch (ex) {
@@ -33,7 +35,7 @@ function Books() {
 
   const deleteBook = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/books/${id}`, {
+      await axios.delete(`${urlBooks}/${id}`, {
         headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
         }
