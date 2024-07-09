@@ -123,15 +123,15 @@ function NavBar() {
 
       <div className='searchAddBook'>
         <div className='searchInput'>
-        <form onSubmit={handleSearch}>
-            <input
-              type="search"
-              placeholder='Buscar por titulo'
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
-        </form>
+          <form onSubmit={handleSearch}>
+              <input
+                type="search"
+                placeholder='Buscar por titulo'
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={handleKeyDown}
+              />
+          </form>
 
           <select value={selectedGenre} id="Género" onChange={handleGenreChange}>
             <option value="">Seleccionar Género</option>
