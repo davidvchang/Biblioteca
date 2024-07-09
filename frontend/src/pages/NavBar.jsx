@@ -76,6 +76,7 @@ function NavBar() {
       localStorage.setItem('token', token);
       logout();
       navigate('/');
+      setMenuMovil(false)
     } catch (err) {
       console.error('Error en el cerrar sesión:', err);
     }
@@ -105,13 +106,12 @@ function NavBar() {
               </div>
 
               <div className='optionsMenu'>
-                <Link to='/' className='booksList'>Ver Libros</Link>
+                <Link to='/' className='booksList' onClick={() => setMenuMovil(false)}>Ver Libros</Link>
                 {isAuthenticated && (
-                  <Link to='/add-book' className='addBook'>Agregar Libro</Link>
+                  <Link to='/add-book' className='addBook' onClick={() => setMenuMovil(false)}>Agregar Libro</Link>
 
                 )}
-                <Link to='/' className='booksList'>Favoritos</Link>
-                {isAuthenticated ? <button onClick={logoutSesion} className='btnLogout'><span>Cerrar Sesión</span></button> : <BtnDark text='Iniciar Sesión' to='/login'/>}
+                {isAuthenticated ? <button onClick={logoutSesion} className='btnLogout'><span>Cerrar Sesión</span></button> : <BtnDark text='Iniciar Sesión' to='/login' onClick={() => setMenuMovil(false)}/>}
               </div>
             </div>
           </div>
@@ -138,7 +138,6 @@ function NavBar() {
           </select>
         </div>
 
-        <BtnDark icon={iconFavorite} text={`Favoritos (${favorites})`}/>
           <div className='containerAddBook'>
             <Link to='/' className='booksList'>Ver Libros</Link>
 

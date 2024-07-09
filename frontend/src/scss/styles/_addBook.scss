@@ -12,6 +12,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 10px;
 
         h1{
             text-align: center;
@@ -98,5 +99,108 @@
         background-color: #88781c;
         transition: all;
         transition-duration: 0.3s;
+    }
+}
+
+@media (max-width: 445px) {
+    .AddBook {
+        width: 100vw;
+        overflow-x: hidden;
+    
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+        
+            .form-group {
+                margin-bottom: 15px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                input, textarea {
+                    width: 85%;
+                    font-size: 14px;
+                    box-sizing: border-box;
+                }
+                
+            }
+            .form-group label {
+                display: flex;
+                margin-bottom: 5px;
+                align-self: self-start;
+                text-align: start;
+                padding-left: 5%;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+            .form-group textarea {
+                resize: vertical;
+            }
+            .btnButton {
+                margin-top: 5px;
+    
+                button {
+    
+                    background-color: #007bff;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 300px;
+                    align-self: center;
+                    justify-content: center;
+                }
+    
+                button:hover {
+                    background-color: #0056b3;
+                    transition: all;
+                    transition-duration: 0.3s;
+                }
+            }
+    
+            .messagesAddBook {
+                margin-top: 15px;
+        
+                .saveCorrectMessage {
+                    background-color: green;
+                    text-align: center;
+                    padding: 5px 20px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                }
+            
+                .saveErrorMessage {
+                    background-color: red;
+                    text-align: center;
+                    padding: 5px 20px;
+                    border-radius: 5px;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        .btnUpdate{
+            background-color: #a8931b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 300px;
+            align-self: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+    
+        .btnUpdate:hover {
+            background-color: #88781c;
+            transition: all;
+            transition-duration: 0.3s;
+        }
     }
 }

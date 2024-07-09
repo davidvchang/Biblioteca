@@ -62,3 +62,42 @@
         }
     }
 }
+
+@media (max-width: 445px) {
+    .Register {
+        width: 100vw;
+    
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+            .form-group {
+                margin-bottom: 15px;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+                input {
+                    width: 85%;
+                    font-size: 14px;
+                }
+                
+            }
+            .form-group label {
+                display: flex;
+                margin-bottom: 5px;
+                align-self: self-start;
+                text-align: start;
+                margin-left: 5%;
+                font-size: 14px;
+            }
+
+            span {
+                font-size: 14px;
+            }
+        }
+    }
+}

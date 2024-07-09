@@ -370,7 +370,7 @@
                     z-index: 50;
                     background-color: #909090;
                     width: 500px;
-                    height: 330px;
+                    height: 273px;
                     right: 0;
                     top: 0;
                     border-radius: 5px;
@@ -516,7 +516,7 @@
                     z-index: 50;
                     background-color: #909090;
                     width: 500px;
-                    height: 275px;
+                    height: 215px;
                     right: 0;
                     top: 0;
                     border-radius: 5px;
@@ -838,7 +838,7 @@
                 z-index: 50;
                 background-color: #909090;
                 width: 500px;
-                height: 330px;
+                height: 273px;
                 right: 0;
                 top: 0;
                 border-radius: 5px;
@@ -984,7 +984,7 @@
                 z-index: 50;
                 background-color: #909090;
                 width: 500px;
-                height: 275px;
+                height: 215px;
                 right: 0;
                 top: 0;
                 border-radius: 5px;
@@ -1260,7 +1260,7 @@
                 z-index: 50;
                 background-color: #909090;
                 width: 100%;
-                height: 330px;
+                height: 260px;
                 right: 0;
                 top: 0;
                 border-radius: 5px;
@@ -1280,7 +1280,7 @@
                     background-color: #f1f1f1;
                     
                     span {
-                        font-size: 16px;
+                        font-size: 15px;
                         font-weight: 400;
                     }
     
@@ -1406,7 +1406,7 @@
                 z-index: 50;
                 background-color: #909090;
                 width: 100%;
-                height: 265px;
+                height: 203px;
                 right: 0;
                 top: 0;
                 border-radius: 5px;
@@ -1426,7 +1426,7 @@
                     background-color: #f1f1f1;
                     
                     span {
-                        font-size: 16px;
+                        font-size: 15px;
                         font-weight: 400;
                     }
     
@@ -1465,50 +1465,13 @@
                     .booksList {
                         text-decoration: none;
                         color: #202020;
-                        font-size: 16px;
+                        font-size: 15px;
                         font-weight: 400;
                         padding: 7px 0;
                     }
     
                     .booksList:hover {
                         color: #606060;
-                        transition: all;
-                        transition-duration: 0.3s;
-                    }
-    
-                    .addBook{
-                        text-decoration: none;
-                        color: #202020;
-                        font-size: 16px;
-                        font-weight: 400;
-                        padding: 7px 0;
-                    }
-    
-                    .btnLogout {
-                        background-color: #202020;
-                        border: none;
-                        padding: 10px;
-                        width: 100%;
-                        min-height: 24px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        cursor: pointer;
-                        text-decoration: none;
-                        border: #202020 1px solid;
-    
-                        span {
-                            color: #f1f1f1;
-                            font-weight: 500;
-                            font-size: 14px;
-                            flex-direction: row;
-                            display: flex;
-                            align-items: center;
-                        }
-                    }
-    
-                    .btnLogout:hover {
-                        background-color: #404040;
                         transition: all;
                         transition-duration: 0.3s;
                     }
@@ -1528,19 +1491,9 @@
                         border-radius: 0%;
     
                         span {
-                            color: #f1f1f1;
-                            font-weight: 500;
+                            font-weight: 400;
                             font-size: 14px;
-                            flex-direction: row;
-                            display: flex;
-                            align-items: center;
                         }
-                    }
-    
-                    .btnDark:hover {
-                        background-color: #404040;
-                        transition: all;
-                        transition-duration: 0.3s;
                     }
                 }
             }

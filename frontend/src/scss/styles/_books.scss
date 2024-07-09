@@ -54,50 +54,62 @@
                 gap: 20px;
                 display: flex;
 
+                .btnEdit {
+                    text-decoration: none;
+                    background-color: rgb(187, 130, 45);
+
+                    span {
+                        color: #d1d1d1;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+                .btnEdit:hover {
+                    background-color: rgb(165, 118, 48);
+                    transition: all;
+                    transition-duration: 0.3s;
+                }
+
+                .btnDelete {
+                    background-color: rgb(182, 60, 60);
+                    
+                    span {
+                        color: #d1d1d1;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+                }
+
+                .btnDelete:hover {
+                    background-color: rgb(146, 54, 54);
+                    transition: all;
+                    transition-duration: 0.3s;
+                }
+
                 .button {
                     width: fit-content;
                     height: fit-content;
-                    padding: 5px;
+                    padding: 5px 10px;
                     display: flex;
+                    flex-direction: row-reverse;
                     justify-content: center;
+                    align-items: center;
                     border: none;
                     cursor: pointer;
                     color: black;
+                    gap: 5px;
+                    border: #707070 1px solid;
+                    border-radius: 5px;
+
+                    span {
+                        text-decoration: none;
+                    }
 
                     .iconsActions {
-                        width: 20px;
-                        height: 20px;
-                    }
-                }
-
-                .btnFavorite .iconFavorite{
-                    fill: white;
-                }
-
-                .button:visited {
-                    color: #202020;
-                }
-
-                .button:hover {
-                    background-color: white;
-                    
-
-                    .iconFavorite {
-                        color: red;
-                        fill: red;
-                        transition: fill 0.3s ease;
-                    }
-
-                    .iconEdit {
-                        color: rgb(255, 136, 0);
-                        transition: all;
-                        transition-duration: 0.3s;
-                    }
-                    
-                    .iconDelete {
-                        color: rgb(40, 68, 224);
-                        transition: all;
-                        transition-duration: 0.3s;
+                        width: 18px;
+                        height: 18px;
+                        color: white;
                     }
                 }
     
@@ -341,6 +353,131 @@
                 }
         
                 .containerActions{
+
+                    .btnEdit {
+                        text-decoration: none;
+                        background-color: rgb(187, 130, 45);
+    
+                        span {
+                            color: #d1d1d1;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .btnEdit:hover {
+                        background-color: rgb(165, 118, 48);
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .btnDelete {
+                        background-color: rgb(182, 60, 60);
+                        
+                        span {
+                            color: #d1d1d1;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .btnDelete:hover {
+                        background-color: rgb(146, 54, 54);
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .button {
+    
+                        .iconsActions {
+                            width: 18px;
+                            height: 18px;
+                        }
+                    }
+        
+                }
+            }
+    
+        }
+    }
+}
+
+@media (max-width: 445px) {
+    .Books {
+        gap: 30px;
+        justify-content: center;
+        padding: 20px 0;
+
+        .BookCard {
+            width: 100vw;
+            min-height: 200px;
+            box-shadow: 0 4px 8px rgb(175, 175, 175);
+            border-radius: 0;
+
+            .containerTitleAuthorSummary {
+                display: flex;
+                flex-direction: column;
+    
+                .title {
+                    font-size: 22px;
+                }
+        
+                .author {
+                    color: #707070;
+                    font-size: 14px;
+                }
+
+                .summary {
+                    font-size: 14px;
+                }
+            }
+    
+            .containerYearGenreIcons {
+                display: flex;
+                flex-direction: column;
+                .yearGenre {
+                    color: #707070;
+                    font-size: 14px;
+                }
+        
+                .containerActions{
+                    margin-top: 12px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    gap: 20px;
+                    .btnEdit {
+                        text-decoration: none;
+                        background-color: rgb(187, 130, 45);
+    
+                        span {
+                            color: #d1d1d1;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .btnEdit:hover {
+                        background-color: rgb(165, 118, 48);
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
+    
+                    .btnDelete {
+                        background-color: rgb(182, 60, 60);
+                        
+                        span {
+                            color: #d1d1d1;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .btnDelete:hover {
+                        background-color: rgb(146, 54, 54);
+                        transition: all;
+                        transition-duration: 0.3s;
+                    }
     
                     .button {
     
