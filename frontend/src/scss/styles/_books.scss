@@ -4,10 +4,10 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px 60px;
-    justify-content: space-around;
-    align-items: start;
+    // justify-content: start;
+    justify-content: center;
     row-gap: 40px;
-    column-gap: 10px;
+    column-gap: 20px;
 
     .BookCard {
         display: flex;
@@ -15,7 +15,7 @@
         color: #202020;
         gap: 2px;
         width: 500px;
-        min-height: 200px;
+        min-height: 240px;
         justify-content: space-between;
         padding: 10px;
         border-radius: 10px;
@@ -33,6 +33,11 @@
             .author {
                 color: #707070;
             }
+            .summary {
+                overflow-y: scroll;
+                max-height: 125px;
+            }
+
         }
 
         .containerYearGenreIcons {
@@ -429,6 +434,7 @@
 
                 .summary {
                     font-size: 14px;
+                    max-height: 150px;
                 }
             }
     
