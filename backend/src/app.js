@@ -14,7 +14,7 @@ app.set('port', process.env.PORT || 4000)
 
 //MIDDLEWARES
 app.use(cors({
-    origin: 'http://localhost:5173', // Cambia esto por el puerto correcto de tu frontend
+    origin: 'http://localhost:5173' || 'https://biblioteca-davidvalenzuela.vercel.app', // Cambia esto por el puerto correcto de tu frontend
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Métodos permitidos
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
